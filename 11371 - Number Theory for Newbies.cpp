@@ -89,20 +89,11 @@ int main (void)
     freopen ("output.txt","w",stdout);
     */
 
-    lld n,t,len,i,x,y;
+    lld len,i,x,y;
+    string str,s1,s2;
 
-    while (sf ("%lld",&n) != EOF)
+    while (cin >> str)
     {
-        t = n;
-        string str,s1,s2;
-
-        while (n)
-        {
-            str.pb((n%10)+'0');
-            n /= 10;
-        }
-
-        reverse (str.begin(),str.end());
         sort (str.begin(),str.end());
         s1 = str;
         reverse (str.begin(),str.end());
