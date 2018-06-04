@@ -1,5 +1,3 @@
-/*** If (2^p)-1 is PRIME, then ((2^p)-1)*(2^(p-1)) is a PERFECT NUMBER.
-
 /***
 
             Bismillahir Rahmanir Rahim
@@ -39,56 +37,17 @@ using namespace std;
 const int MOD = 1000000007;
 const int MAX = 1000005;
 
-bool isPrime (U n)
-{
-    if (n == 2)
-        return true;
-
-    if (n < 2 || !(n & 1))
-        return false;
-
-    for (U i=3; i*i<=n; i++)
-        if (n % i == 0)
-            return false;
-
-    return true;
-}
-
-llu power (U p)
-{
-    U b = 1;
-
-    while (p--)
-        b *= 2;
-
-    return b;
-}
-
 int main (void)
 {
     /*
     freopen ("input.txt","r",stdin);
     freopen ("output.txt","w",stdout);
-    fast;
     */
 
-    U n;
-    llu val;
+    int i,j;
 
-    while (sf ("%u",&n) && n)
-    {
-        val = power(n)-1;
-
-        if (isPrime(val))
-        {
-            val = power(n-1)*(power(n)-1);
-            pf ("Perfect: %llu!\n",val);
-        }
-        else if (isPrime(n))
-            pf ("Given number is prime. But, NO perfect number is available.\n");
-        else
-            pf ("Given number is NOT prime! NO perfect number is available.\n");
-    }
+    while (sf ("%d %d",&i,&j) != EOF)
+        pf ("%d\n",i*j-1);
 
     return 0;
 }
